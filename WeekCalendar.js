@@ -2,7 +2,6 @@ import { format, addDays, getDate, startOfWeek, isSameDay } from "date-fns";
 import React, { useState, useEffect } from "react";
 import { StyleSheet, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
-// import { onChange } from "react-native-reanimated";
 
 const WeekCalendar = ({ date, onChange }) => {
   const [week, setWeek] = useState([]);

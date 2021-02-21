@@ -20,6 +20,7 @@ import iconProfileOutline from "./icons/outline/profile.png";
 
 // Component
 import WeekCalendar from "./WeekCalendar";
+import ProgressBar from "./ProgressBar.js"
 
 // Color
 const biru900 = "#132743";
@@ -38,7 +39,7 @@ export default function App() {
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
       }}
     >
-      <View style={{ flex: 1, backgroundColor: "pink" }}>
+      <View style={{ flex: 1, backgroundColor: "white" }}>
         {/* Container Header Home */}
         <View
           style={{
@@ -66,14 +67,26 @@ export default function App() {
         {/* End Container Header Home */}
 
         {/* Start Week Calendar */}
-        <View style={{ flex: 1 }}>
+        <View style={{flex:1}}>
           <WeekCalendar date={date} onChange={(newDate) => setDate(newDate)} />
         </View>
         {/* End Week Calendar */}
       </View>
+
+      {/* Start Health Meter */}
+      <View style={{flex:4}}>
+        <ProgressBar />
+      </View>
+      {/* End Healt Meter */}
+
       {/* Container Bottom Navbar */}
       <View
-        style={{ height: 56, backgroundColor: "white", flexDirection: "row" }}
+        style={{
+          height: 56,
+          backgroundColor: "white",
+          flexDirection: "row",
+          elevation: 8,
+        }}
       >
         {/* Home */}
         <View
