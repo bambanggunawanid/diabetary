@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Text, View, StyleSheet } from "react-native";
-import Constants from "expo-constants";
 import Donut from "./Donut";
+import { LinearGradient } from "expo-linear-gradient";
 
 const data = [
   {
@@ -10,8 +10,8 @@ const data = [
     max: 500,
     radius: 84,
     strokeWidth: 20,
-    unit:"mg/dL",
-    header:"GULA DARAH",
+    unit: "mg/dL",
+    header: "GULA DARAH",
   },
   {
     percentage: 1500,
@@ -19,8 +19,8 @@ const data = [
     max: 3000,
     radius: 104,
     strokeWidth: 22,
-    unit:"kkal",
-    header:"KALORI SAAT INI",
+    unit: "kkal",
+    header: "KALORI SAAT INI",
   },
 ];
 
@@ -59,6 +59,18 @@ const styles = StyleSheet.create({
   container: {
     justifyContent: "center",
     padding: 8,
-    marginTop:-8
+  },
+  linearGradient: {
+    flex: 1,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 5,
+  },
+  buttonText: {
+    fontSize: 18,
+    textAlign: "center",
+    margin: 10,
+    color: "#ffffff",
+    backgroundColor: "transparent",
   },
 });

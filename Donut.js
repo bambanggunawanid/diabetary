@@ -8,7 +8,6 @@ import {
   StyleSheet,
 } from "react-native";
 import Svg, { G, Circle } from "react-native-svg";
-import {LinearGradient} from "react-native-linear-gradient";
 
 const AnimatedCircle = Animated.createAnimatedComponent(Circle);
 const AnimatedTextInput = Animated.createAnimatedComponent(TextInput);
@@ -130,12 +129,6 @@ export default function Donut({
       >
         {unit}
       </Text>
-      <LinearGradient
-        colors={["#4c669f", "#3b5998", "#192f6a"]}
-        style={styles.linearGradient}
-      >
-        <Text style={styles.buttonText}>Sign in with Facebook</Text>
-      </LinearGradient>
     </View>
   );
 }

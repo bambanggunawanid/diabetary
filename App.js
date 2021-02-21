@@ -20,7 +20,8 @@ import iconProfileOutline from "./icons/outline/profile.png";
 
 // Component
 import WeekCalendar from "./WeekCalendar";
-import ProgressBar from "./ProgressBar.js"
+import ProgressBar from "./ProgressBar.js";
+import HealthInform from "./HealthInform";
 
 // Color
 const biru900 = "#132743";
@@ -31,107 +32,81 @@ const biru500 = "#2C517B";
 
 export default function App() {
   const [date, setDate] = useState(new Date());
-
   return (
     <SafeAreaView
       style={{
         flex: 1,
         paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
-      }}
-    >
-      <View style={{ flex: 1, backgroundColor: "white" }}>
-        {/* Container Header Home */}
-        <View
-          style={{
-            height: 56,
-            backgroundColor: "white",
-            flexDirection: "row",
-            justifyContent: "space-between",
-            alignItems: "center",
-            paddingHorizontal: 16,
-          }}
-        >
+      }}>
+      {/* Container Header Home */}
+      <SafeAreaView style={{backgroundColor: "white" }}>
+
+        <View style={{ height: 56, backgroundColor: "white",flexDirection: "row",justifyContent: "space-between",alignItems: "center",paddingHorizontal: 16,}}>
           <View>
             <Image source={iconLogo} style={{ width: 28, height: 28 }} />
           </View>
+
           <View>
             <Text style={{ fontWeight: "bold", color: biru800 }}>HOME</Text>
           </View>
+
           <View>
-            <Image
-              source={iconNotification}
-              style={{ width: 28, height: 28 }}
-            />
+            <Image source={iconNotification}style={{ width: 28, height: 28 }}/>
           </View>
+
         </View>
+
+      </SafeAreaView>
         {/* End Container Header Home */}
 
         {/* Start Week Calendar */}
-        <View style={{flex:1}}>
+        <View style={{}}>
           <WeekCalendar date={date} onChange={(newDate) => setDate(newDate)} />
         </View>
         {/* End Week Calendar */}
-      </View>
 
       {/* Start Health Meter */}
-      <View style={{flex:4}}>
+      <View style={{}}>
         <ProgressBar />
       </View>
       {/* End Healt Meter */}
 
+      {/* Health Informations */}
+      <View style={{ flex:1 }}>
+        <HealthInform />
+      </View>
+      {/* End Information Healthy */}
+
       {/* Container Bottom Navbar */}
-      <View
-        style={{
-          height: 56,
-          backgroundColor: "white",
-          flexDirection: "row",
-          elevation: 8,
-        }}
-      >
+      <View style={{height: 56,backgroundColor: "white",flexDirection: "row", borderTopWidth: 1, borderColor:"#E6E9EE"}}>
         {/* Home */}
-        <View
-          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-        >
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
           <View>
             <Image source={iconHome} style={{ width: 28, height: 28 }} />
           </View>
-          <Text style={{ fontSize: 10, color: biru800, fontWeight: "bold" }}>
-            Home
-          </Text>
+          <Text style={{ fontSize: 10, color: biru800, fontWeight: "bold" }}>Home</Text>
         </View>
+
         {/* Dietary */}
-        <View
-          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-        >
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }} >
           <View>
-            <Image
-              source={iconHeartOutline}
-              style={{ width: 28, height: 28 }}
-            />
+            <Image source={iconHeartOutline}style={{ width: 28, height: 28 }}/>
           </View>
           <Text style={{ fontSize: 10, color: biru800 }}>Dietary</Text>
         </View>
+
         {/* Consult */}
-        <View
-          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-        >
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
           <View>
-            <Image
-              source={iconConsultOutline}
-              style={{ width: 28, height: 28 }}
-            />
+            <Image source={iconConsultOutline} style={{ width: 28, height: 28 }}/>
           </View>
           <Text style={{ fontSize: 10, color: biru800 }}>Consult</Text>
         </View>
+
         {/* Profile */}
-        <View
-          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
-        >
+        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
           <View>
-            <Image
-              source={iconProfileOutline}
-              style={{ width: 28, height: 28 }}
-            />
+            <Image source={iconProfileOutline}style={{ width: 28, height: 28 }}/>
           </View>
           <Text style={{ fontSize: 10, color: biru800 }}>Profile</Text>
         </View>
